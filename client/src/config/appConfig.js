@@ -9,11 +9,13 @@ const clients = {
     companyName: "Placeholder Client",
     logoUrl: "https://placehold.co/160x48?text=Company+Logo",
     corporateColor: "#000000",
+    emailDomain: "gmail.com",
   },
   hydSpain: {
     companyName: "H&D España",
     logoUrl: hydSpainLogo,
     corporateColor: "#31BCE7",
+    emailDomain: "hyd.com.es",
   },
 };
 

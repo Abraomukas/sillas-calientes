@@ -21,6 +21,6 @@ export async function loginWithGoogle(credential) {
     email: claims.email,
     name: claims.name,
     picture: claims.picture,
-    credential, // the backend will receive this token in Step 4
+    credential,
   };
 }

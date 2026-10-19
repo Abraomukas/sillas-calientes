@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { useAuth } from "../context/AuthContext";
-import { appConfig, tenantConfig } from "../config/appConfig";
+import { appConfig, clientConfig } from "../config/appConfig";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -33,8 +33,8 @@ export default function Auth() {
       <div className="card shadow-sm w-100" style={{ maxWidth: "420px" }}>
         <div className="card-body p-4 text-center">
           <img
-            src={tenantConfig.logoUrl}
-            alt={`${tenantConfig.companyName} logo`}
+            src={clientConfig.logoUrl}
+            alt={`${clientConfig.companyName} logo`}
             height="40"
             className="mb-2"
           />

@@ -9,12 +9,24 @@ export async function loginWithGoogle(credential) {
   }
 
   // "hd" (hosted domain) is only present for Google Workspace accounts
-  const workspaceDomain = claims.hd?.toLowerCase();
+  // const workspaceDomain = claims.hd?.toLowerCase();
 
-  if (workspaceDomain !== clientConfig.emailDomain) {
+  // if (workspaceDomain !== clientConfig.emailDomain) {
+  //   throw new Error(
+  //     `Please sign in with your @${clientConfig.emailDomain} company account.`,
+  //   );
+  // }
+
+  let domain = claims.email.split("@")[1];
+
+  if (claims.email.split("@")[1] !== clientConfig.emailDomain) {
     throw new Error(
       `Please sign in with your @${clientConfig.emailDomain} company account.`,
     );
+  } else {
+    console.log("EMAIL\n" + claims.email);
+    console.log("DOMAIN\n" + domain);
+    console.log("AUTH PASSED");
   }
 
   return {
